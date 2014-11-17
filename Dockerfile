@@ -7,10 +7,11 @@ RUN apt-get update \
     && mv confd-0.6.3-linux-amd64 /usr/local/bin/confd \
     && chmod +x /usr/local/bin/confd \
     && mkdir /etc/confd \
-    && mkdir /etc/confd/{conf.d,templates} 
+    && mkdir /etc/confd/conf.d \
+    && mkdir /etc/confd/templates
 
 # Copies the base config into the conf.d directory
-COPY confd.toml /etc/confd/conf.d/confd.toml
+COPY confd.toml /etc/confd/confd.toml
 
 # Install whatever else we end up needing
 
